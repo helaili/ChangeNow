@@ -11,7 +11,7 @@ Vue.config.productionTip = false
 
 // Using axios
 export let httpclient = axios.create({
-  baseURL: 'http://localhost:3000/flipper/api/',
+  baseURL: 'http://localhost:8080/api/',
   timeout: 1000
 })
 

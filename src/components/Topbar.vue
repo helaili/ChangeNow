@@ -1,13 +1,11 @@
 <template>
-  <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <el-menu-item v-if="isProcessingCenterEnabled()" index="1">Processing Center</el-menu-item>
-    <el-submenu index="2">
-      <template slot="title">Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <el-submenu index="users">
+      <template slot="title">Login</template>
+      <el-menu-item key="user" v-bind:index="user" v-for="(user, index) in users">{{user}}</el-menu-item>
     </el-submenu>
-    <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
+    <el-menu-item v-if="isProcessingCenterEnabled" index="1">Processing Center</el-menu-item>
+    <el-menu-item index="2"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
   </el-menu>
 </template>
 
@@ -15,21 +13,27 @@
   export default {
     data () {
       return {
-        activeIndex: '1',
-        activeIndex2: '1'
+        activeIndex: 'users',
+        isProcessingCenterEnabled: false,
+        users: ['helaili', 'alain', 'darth', 'obiwan', 'octocat']
       }
     },
     methods: {
       handleSelect (key, keyPath) {
-        console.log(key, keyPath)
+        if (keyPath[0] === 'users') {
+          var currentUser = key
+          this.isFeatureEnabled('processingCenter', currentUser, 'isProcessingCenterEnabled')
+        }
       },
-      isProcessingCenterEnabled: function () {
-        console.log(this.$http)
-        this.$http.get('/features/processingCenter').then((res) => {
-          return true
+      isFeatureEnabled: function (feature, actor, flag) {
+        this.$http.post('/flipper/enabled', {
+          actor: actor,
+          feature: feature
+        }).then((res) => {
+          var jsonRes = JSON.parse(res.data)
+          this[flag] = jsonRes.enabled
         }, (error) => {
           console.log(error)
-          return false
         })
       }
     },

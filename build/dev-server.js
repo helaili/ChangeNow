@@ -9,6 +9,7 @@ var opn = require('opn')
 var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
+var SwaggerExpress = require('swagger-express-mw')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
@@ -70,14 +71,31 @@ devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')
 })
 
-module.exports = app.listen(port, function (err) {
-  if (err) {
-    console.log(err)
-    return
+module.exports = app; // for testing
+
+var swagggerConfig = {
+  appRoot: __dirname + '/..', // required config
+  swaggerSecurityHandlers: {
+    UserSecurity: function securityHandler1(req, authOrSecDef, scopesOrApiKey, cb) {
+      cb();
+    }
+  }
+}
+
+SwaggerExpress.create(swagggerConfig, function(err, swaggerExpress) {
+  if (err) { throw err; }
+
+  // install middleware
+  swaggerExpress.register(app);
+
+  app.listen(port);
+
+  if (swaggerExpress.runner.swagger.paths['/hello']) {
+    console.log('try this:\ncurl http://127.0.0.1:' + port + '/api/hello?name=Scott');
   }
 
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri)
   }
-})
+});
