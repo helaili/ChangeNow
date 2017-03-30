@@ -39,7 +39,7 @@ function isEnabled(req, res) {
 			return res.json(apiResBody);
     });
   });
-	
+
 	apiRequest.write(postData);
   apiRequest.end();
 }

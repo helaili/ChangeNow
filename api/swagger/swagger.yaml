@@ -18,6 +18,43 @@ consumes:
 produces:
   - application/json
 paths:
+  /myfeature:
+    x-swagger-router-controller: myfeature
+    post:
+      description: An awesome feature
+      operationId: doSomething
+      parameters:
+        - name: op1
+          in: formData
+          description: A param
+          required: true
+          type: number
+        - name: op2
+          in: formData
+          description: A param
+          required: true
+          type: number
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/doSomethingResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    get:
+      description: An other awesome feature
+      operationId: doSomethingElse
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/doSomethingResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /flipper/enabled:
     x-swagger-router-controller: flipper
     post:
@@ -53,6 +90,12 @@ definitions:
     properties:
       enabled:
         type: boolean
+  doSomethingResponse:
+    required:
+      - result
+    properties:
+      result:
+        type: number
   ErrorResponse:
     required:
       - message

@@ -4,7 +4,8 @@
       <template slot="title">Login</template>
       <el-menu-item key="user" v-bind:index="user" v-for="(user, index) in users">{{user}}</el-menu-item>
     </el-submenu>
-    <el-menu-item v-if="isProcessingCenterEnabled" index="1">Processing Center</el-menu-item>
+    <el-menu-item index="processingCenter" v-if="isProcessingCenterEnabled">Processing Center</el-menu-item>
+    <el-menu-item index="calculator">Calculator</el-menu-item>
     <el-menu-item index="2"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
   </el-menu>
 </template>
@@ -23,6 +24,8 @@
         if (keyPath[0] === 'users') {
           var currentUser = key
           this.isFeatureEnabled('processingCenter', currentUser, 'isProcessingCenterEnabled')
+        } else if (keyPath[0] === 'calculator') {
+          this.$router.push({name: 'CalculatorView'})
         }
       },
       isFeatureEnabled: function (feature, actor, flag) {
