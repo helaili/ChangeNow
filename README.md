@@ -27,10 +27,15 @@ npm run e2e
 npm test
 ```
 
+#soloFlipper
+`bin/rails server`
 
 #gh-ost
-`run.sh`
-`mysql --defaults-file=mysql.cnf < insert.sql`
+`runChangeNow.sh`
+`insertData.sh`
 `rm /tmp/gh-ost.test.postpone.flag`
+
+- `runUsers.sh`
+- change feature flag
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
