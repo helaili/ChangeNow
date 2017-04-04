@@ -3,7 +3,7 @@ info:
   version: "0.0.1"
   title: ChangeNow API
 # during dev, should point to your local machine
-host: localhost:8080
+host: localhost:8888
 # basePath prefixes all resource paths
 basePath: /api
 #
@@ -55,6 +55,22 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /users:
+    x-swagger-router-controller: users
+    get:
+      description: An other awesome feature
+      operationId: getAll
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/user"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /flipper/enabled:
     x-swagger-router-controller: flipper
     post:
@@ -90,6 +106,18 @@ definitions:
     properties:
       enabled:
         type: boolean
+  user:
+    required:
+      - firstname
+      - lastname
+      - email
+    properties:
+      firstname:
+        type: string
+      lastname:
+        type: string
+      email:
+        type: string
   doSomethingResponse:
     required:
       - result

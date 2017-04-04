@@ -9,6 +9,7 @@ var opn = require('opn')
 var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
+var mysql = require('mysql')
 var SwaggerExpress = require('swagger-express-mw')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
@@ -64,6 +65,30 @@ app.use(hotMiddleware)
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
+
+
+
+var dbPool  = mysql.createPool(config.dev.env.db);
+dbPool.getConnection(function(err, connection) {
+  if (err) {
+    console.error('Error connecting to the database pool: ' + err.stack)
+    return;
+  }
+
+  connection.query('SELECT 1', function (error, results, fields) {
+    if (err) {
+      console.error('Error querying the database: ' + err.stack)
+      return
+    } else {
+      console.log('Successfully connected to the database')
+    }
+  })
+})
+
+app.use(function (req, res, next) {
+  req.dbPool = dbPool
+  next()
+})
 
 var uri = 'http://localhost:' + port
 

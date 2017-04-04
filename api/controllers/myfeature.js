@@ -9,10 +9,9 @@ module.exports = {
 };
 
 function doSomething(req, res) {
-	console.log(req.swagger.params);
 	var a = req.swagger.params.op1.value;
 	var b = req.swagger.params.op2.value;
-	var ab = [a, b];
+	var ab = [a, 0];
 
 	var experimentResult = science('div-array', (experiment) => {
     experiment.context({ 'div':  a + '/' + b});

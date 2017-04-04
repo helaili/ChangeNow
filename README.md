@@ -27,4 +27,10 @@ npm run e2e
 npm test
 ```
 
+
+#gh-ost
+`run.sh`
+`mysql --defaults-file=mysql.cnf < insert.sql`
+`rm /tmp/gh-ost.test.postpone.flag`
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

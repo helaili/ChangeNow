@@ -1,5 +1,7 @@
 mysql --defaults-file=mysql.cnf < create.sql
 
+./insertData.sh
+
 read -p "Data created - Press enter to continue"
 
 touch /tmp/gh-ost.test.postpone.flag

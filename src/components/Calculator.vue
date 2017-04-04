@@ -14,6 +14,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="divide">Divide</el-button>
+        <el-button type="primary" @click="otherOperation">Autre operation</el-button>
         <el-button @click="reset">Reset</el-button>
       </el-form-item>
     </el-form>
@@ -23,7 +24,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'calculator',
   data () {
     return {
       msg: 'Welcome to Your Calculator App',
@@ -36,8 +37,14 @@ export default {
   },
   methods: {
     divide () {
-      console.log(this.form.op1 / this.form.op2)
       this.$http.post('/myfeature', this.form).then((res) => {
+        this.result = res.data.result
+      }, (error) => {
+        console.log(error)
+      })
+    },
+    otherOperation () {
+      this.$http.get('/myfeature', this.form).then((res) => {
         this.result = res.data.result
       }, (error) => {
         console.log(error)

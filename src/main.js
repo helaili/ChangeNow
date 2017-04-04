@@ -11,8 +11,8 @@ Vue.config.productionTip = false
 
 // Using axios
 export let httpclient = axios.create({
-  baseURL: 'http://localhost:8080/api/',
-  timeout: 1000
+  baseURL: 'http://localhost:8888/api/',
+  timeout: 10000
 })
 
 Vue.prototype.$http = httpclient
