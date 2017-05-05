@@ -7,9 +7,9 @@ module.exports = merge(devEnv, {
     connectionLimit: 10,
     acquireTimeout: 10000,
     host: '127.0.0.1',
-    port: 3360,
-    user: 'gh-ost',
-    password: 'gh-ost',
-    database: 'gh-ost'
+    user: 'travis',
+    port: 3306,
+    password: '',
+    database: 'ChangeNow'
   }
 })

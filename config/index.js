@@ -4,6 +4,9 @@ var path = require('path')
 var envFile = './dev.env'
 if(process.env.NODE_ENV === 'testing') {
   envFile = './test.env'
+} else if(process.env.NODE_ENV === 'travis') {
+  envFile = './travis.env'
+  process.env.NODE_ENV = 'testing'
 }
 
 module.exports = {
