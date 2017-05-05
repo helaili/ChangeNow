@@ -113,19 +113,20 @@ module.exports = {
 }
 
 SwaggerExpress.create(swagggerConfig, function(err, swaggerExpress) {
-  if (err) { throw err; }
+  if (err) {
+    throw err
+  }
 
-  // install middleware
-  swaggerExpress.register(app);
+  swaggerExpress.register(app)
 
   server = app.listen(port)
 
   if (swaggerExpress.runner.swagger.paths['/hello']) {
-    console.log('try this:\ncurl http://127.0.0.1:' + port + '/api/hello?name=Scott');
+    console.log('try this:\ncurl -H "Accept: application/json" http://127.0.0.1:' + port + '/api/hello?name=Scott')
   }
 
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri)
   }
-});
+})
