@@ -67,20 +67,18 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-
-
 var dbPool  = mysql.createPool(config.dev.env.db);
 dbPool.getConnection(function(err, connection) {
-  if (err && process.env.NODE_ENV !== 'travis') {
+  if (err) {
     console.error('Error connecting to the database pool: ' + err.stack)
     return;
   }
 
   connection.query('SELECT 1', function (error, results, fields) {
-    if (err && process.env.NODE_ENV !== 'travis') {
+    if (err) {
       console.error('Error querying the database: ' + err.stack)
       return
-    } else if (process.env.NODE_ENV !== 'travis') {
+    } else {
       console.log('Successfully connected to the database')
     }
   })
