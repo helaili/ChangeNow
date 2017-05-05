@@ -26,6 +26,7 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 var compiler = webpack(webpackConfig)
+var server = null
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
@@ -96,8 +97,6 @@ devMiddleware.waitUntilValid(function () {
   console.log('> Listening at ' + uri + '\n')
 })
 
-module.exports = app; // for testing
-
 var swagggerConfig = {
   appRoot: __dirname + '/..', // required config
   swaggerSecurityHandlers: {
@@ -107,13 +106,19 @@ var swagggerConfig = {
   }
 }
 
+module.exports = {
+  close: () => {
+    server.close()
+  }
+}
+
 SwaggerExpress.create(swagggerConfig, function(err, swaggerExpress) {
   if (err) { throw err; }
 
   // install middleware
   swaggerExpress.register(app);
 
-  app.listen(port);
+  server = app.listen(port)
 
   if (swaggerExpress.runner.swagger.paths['/hello']) {
     console.log('try this:\ncurl http://127.0.0.1:' + port + '/api/hello?name=Scott');
