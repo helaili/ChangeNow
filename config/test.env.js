@@ -8,6 +8,7 @@ module.exports = merge(devEnv, {
     acquireTimeout: 10000,
     host: '127.0.0.1',
     user: 'travis',
+    port: 3306,
     password: '',
     database: 'ChangeNow'
   }
