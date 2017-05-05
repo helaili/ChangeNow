@@ -1,4 +1,4 @@
-# change-now
+# change-now [![Build Status](https://travis-ci.org/helaili/ChangeNow.svg?branch=master)](https://travis-ci.org/helaili/ChangeNow)
 
 > A project where changes can be pushed now!
 
