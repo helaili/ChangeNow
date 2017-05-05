@@ -71,16 +71,16 @@ app.use(staticPath, express.static('./static'))
 
 var dbPool  = mysql.createPool(config.dev.env.db);
 dbPool.getConnection(function(err, connection) {
-  if (err) {
+  if (err && process.env.NODE_ENV !== 'travis') {
     console.error('Error connecting to the database pool: ' + err.stack)
     return;
   }
 
   connection.query('SELECT 1', function (error, results, fields) {
-    if (err) {
+    if (err && process.env.NODE_ENV !== 'travis') {
       console.error('Error querying the database: ' + err.stack)
       return
-    } else {
+    } else if (process.env.NODE_ENV !== 'travis') {
       console.log('Successfully connected to the database')
     }
   })
