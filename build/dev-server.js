@@ -67,6 +67,9 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
+
+console.log('***********', process.env.NODE_ENV, config.dev.env.db.port)
+
 var dbPool  = mysql.createPool(config.dev.env.db);
 dbPool.getConnection(function(err, connection) {
   if (err) {
