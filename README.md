@@ -1,6 +1,6 @@
 # change-now
 
-> A project which can pushed now!
+> A project where changes can be pushed now!
 
 ## Build Setup
 
@@ -28,9 +28,15 @@ npm test
 ```
 
 #soloFlipper
+
 `bin/rails server`
 
+#MySQL
+
+`/usr/local/mysql/bin/mysqld --user=_mysql --port=3360 --socket=/tmp/mysqlghost.sock --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --plugin-dir=/usr/local/mysql/lib/plugin --log-error=/usr/local/mysql/data/mysqld.local.err --pid-file=/usr/local/mysql/data/mysqld.local.pid --log-bin --server-id=99999`
+
 #gh-ost
+
 `runChangeNow.sh`
 `insertData.sh`
 `rm /tmp/gh-ost.test.postpone.flag`
@@ -38,4 +44,3 @@ npm test
 - `runUsers.sh`
 - change feature flag
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
