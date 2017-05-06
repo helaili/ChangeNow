@@ -9,7 +9,7 @@ before_install:
 script:
   - npm test
   - echo $TRAVIS_BRANCH; echo $TRAVIS_PULL_REQUEST;
-  - if [ "$TRAVIS_BRANCH" == "master" && $TRAVIS_PULL_REQUEST == 'false']; then bundle install && bundle exec rake deploy; fi
+  - if [[ "$TRAVIS_BRANCH" == "master" && $TRAVIS_PULL_REQUEST == 'false' ]]; then bundle install && bundle exec rake deploy; fi
 env:
   global:
     - NODE_ENV: travis
