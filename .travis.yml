@@ -1,10 +1,8 @@
 language: node_js
-node_js:
-  - "node"
 sudo: required
 dist: trusty
-script:
-  - java -version
+node_js:
+  - "node"
 services:
   - mysql
 before_install:
