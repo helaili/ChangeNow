@@ -1,14 +1,11 @@
-dist: trusty
-sudo: false
 language: node_js
 node_js:
   - "node"
 services:
   - mysql
 before_install:
+  - sudo apt-get install oracle-java8-set-default
   - mysql -e 'CREATE DATABASE ChangeNow;'
-before_script:
-  - jdk_switcher use oraclejdk8
 env:
   global:
     - NODE_ENV: travis
