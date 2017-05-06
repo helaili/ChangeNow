@@ -5,8 +5,8 @@ services:
   - mysql
 before_install:
   - mysql -e 'CREATE DATABASE ChangeNow;'
-jdk:
-  - oraclejdk8
+before_script:
+  - jdk_switcher use oraclejdk8
 env:
   global:
     - NODE_ENV: travis
