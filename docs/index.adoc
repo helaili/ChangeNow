@@ -20,7 +20,7 @@ Besides all the technology already mentioned, ChnageNow also leverage http://ele
 
 === Limitations and shortcomings
 
-There's probably a million of them. This project is just a workbench so although it is meant to be realistic, it is far from being perfect. 
+There's probably a million of them. This project is just a workbench so although it is meant to be realistic, it is far from being perfect. And let's not forget we are writing documentation for the sake of showing how to write documentation! 
 
 === Reference documentation
 
