@@ -1,6 +1,7 @@
 = ChangeNow Documentation
 Alain Hélaïli <helaili@github.com>
 :showtitle:
+:toc: left
 :page-title: ChangeNow Documentation
 :page-description: An application using cool concepts such as Documentation-As-Code (Asciidoctor), Feature Toggle (Flipper), Live experiments (Scientist) and MySQL Schema migration (gh-ost)
 
@@ -14,13 +15,23 @@ Trying to stay away from the dreaded `hello-world` which leaves you with more qu
 - App was scaffolded with the Vue.js CLI, which by default relies on Chrome for end-to-end tests. This doesn't fly with Travis.
 - This list will probably grow
 
+=== Asciidoctor
+
+=== Flipper
+
+=== gh-ost
+
+=== Scientist
+
+=== Travis
+
 === Other components
 
 Besides all the technology already mentioned, ChnageNow also leverage http://element.eleme.io/#/en-US[Element] for the UI, and http://swagger.io/[Swagger] for the API.
 
 === Limitations and shortcomings
 
-There's probably a million of them. This project is just a workbench so although it is meant to be realistic, it is far from being perfect. And let's not forget we are writing documentation for the sake of showing how to write documentation! 
+There's probably a million of them. This project is just a workbench so although it is meant to be realistic, it is far from being perfect. And let's not forget we are writing documentation for the sake of showing how to write documentation!
 
 === Reference documentation
 
