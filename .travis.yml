@@ -8,7 +8,7 @@ before_install:
   - mysql -e 'CREATE DATABASE ChangeNow;'
 script:
   - npm test
-  - $TRAVIS_BRANCH == "master" && bundle install && bundle exec rake deploy
+  - "$TRAVIS_BRANCH" == "master" && bundle install && bundle exec rake deploy
 env:
   global:
     - NODE_ENV: travis
