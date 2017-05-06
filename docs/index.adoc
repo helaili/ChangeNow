@@ -1,7 +1,7 @@
 = ChangeNow Documentation
 Alain Hélaïli <helaili@github.com>
 :showtitle:
-:toc: left
+:toc: right
 :page-title: ChangeNow Documentation
 :page-description: An application using cool concepts such as Documentation-As-Code (Asciidoctor), Feature Toggle (Flipper), Live experiments (Scientist) and MySQL Schema migration (gh-ost)
 
