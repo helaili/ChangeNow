@@ -1,11 +1,10 @@
 language: node_js
 node_js:
   - "node"
-sudo: false
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
+sudo: required
+dist: trusty
+script:
+  - java -version
 services:
   - mysql
 before_install:
