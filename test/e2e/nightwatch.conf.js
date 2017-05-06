@@ -21,7 +21,7 @@ module.exports = {
     default: {
       selenium_port: 4444,
       selenium_host: 'localhost',
-      silent: false,
+      silent: true,
       globals: {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
       }
@@ -40,6 +40,14 @@ module.exports = {
         browserName: 'firefox',
         javascriptEnabled: true,
         acceptSslCerts: true
+      }
+    },
+
+    phantom: {
+      desiredCapabilities: {
+        browserName : 'phantomjs',
+        javascriptEnabled : true,
+        acceptSslCerts : true
       }
     }
   }
