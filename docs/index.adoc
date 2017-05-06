@@ -1,9 +1,10 @@
-= Congratulations!
+= ChangeNow Documentation
+Alain Hélaïli <helaili@github.com>
 :showtitle:
 :page-title: ChangeNow Documentation
 :page-description: An application using cool concepts such as Documentation-As-Code (Asciidoctor), Feature Toggle (Flipper), Live experiments (Scientist) and MySQL Schema migration (gh-ost)
 
-You've successfully set up and deployed an Jekyll website powered by AsciiDoc using the https://github.com/asciidoctor/jekyll-asciidoc-quickstart[*Jekyll AsciiDoc Quickstart*] project. If everything is in order then changes to the AsciiDoc content will be automatically published to your `gh_pages` branch and hosted via Jekyll and Github.
+ChangeNow is an application using several cool concepts such as Documentation-As-Code (http://asciidoctor.org/[Asciidoctor]), Feature Toggle (https://github.com/jnunemaker/flipper[Flipper]), Live experiments (https://github.com/github/scientist[Scientist]) and MySQL Schema migration (https://github.com/github/gh-ost[gh-ost]). Its goal is to demonstrate several modern practices allowing developers to be more agile and productive while maintaining stability.
 
 == What do I do now?
 
