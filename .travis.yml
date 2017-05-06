@@ -6,6 +6,9 @@ services:
 before_install:
   - sudo apt-get install oracle-java8-set-default
   - mysql -e 'CREATE DATABASE ChangeNow;'
+before_script:
+  # Sleeping in order to avoid connection problems with Selenium
+  - "sleep 15"
 env:
   global:
     - NODE_ENV: travis
