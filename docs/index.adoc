@@ -27,7 +27,7 @@ Trying to stay away from the dreaded `hello-world` which leaves you with more qu
 
 === Other components
 
-Besides all the technology already mentioned, ChnageNow also leverage http://element.eleme.io/#/en-US[Element] for the UI, and http://swagger.io/[Swagger] for the API.
+Besides all the technology already mentioned, ChangeNow also leverage http://element.eleme.io/#/en-US[Element] for the UI, and http://swagger.io/[Swagger] for the API.
 
 === Limitations and shortcomings
 
