@@ -11,7 +11,7 @@ module.exports = {
 function doSomething(req, res) {
 	var a = req.swagger.params.op1.value;
 	var b = req.swagger.params.op2.value;
-  // Awful bug!!!!! 
+  // Awful bug!!!!!
 	var ab = [a, 0];
 
 	var experimentResult = science('div-array', (experiment) => {
@@ -44,9 +44,6 @@ function doSomethingElse(req, res) {
 	return res.json({'result': experimentResult});
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function multiplyOld(arr) {
 	for(var d = 0; d < 100000; d++) {
