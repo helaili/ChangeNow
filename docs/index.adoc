@@ -19,6 +19,22 @@ Trying to stay away from the dreaded `hello-world` which leaves you with more qu
 
 === Flipper
 
+[source,javascript]
+----
+include::src/components/Topbar.vue[lines=7]
+----
+
+[source,javascript]
+----
+include::src/components/Topbar.vue[lines=21]
+----
+
+[source,javascript]
+----
+include::src/components/Topbar.vue[lines=36..48]
+----
+
+
 === gh-ost
 
 === Scientist
