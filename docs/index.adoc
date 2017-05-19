@@ -2,8 +2,10 @@
 Alain Hélaïli <helaili@github.com>
 :showtitle:
 :toc: right
+:sourcedir: ..
 :page-title: ChangeNow Documentation
-:page-description: An application using cool concepts such as Documentation-As-Code (Asciidoctor), Feature Toggle (Flipper), Live experiments (Scientist) and MySQL Schema migration (gh-ost)
+:page-description: An application using cool concepts such as Documentation-As-Code (Asciidoctor),
+Feature Toggle (Flipper), Live experiments (Scientist) and MySQL Schema migration (gh-ost)
 
 ChangeNow is an application using several cool concepts such as Documentation-As-Code (http://asciidoctor.org/[Asciidoctor]), Feature Toggle (https://github.com/jnunemaker/flipper[Flipper]), Live experiments (https://github.com/github/scientist[Scientist]) and MySQL Schema migration (https://github.com/github/gh-ost[gh-ost]). Its goal is to demonstrate several modern practices allowing developers to be more agile and productive while maintaining stability.
 
@@ -21,17 +23,17 @@ Trying to stay away from the dreaded `hello-world` which leaves you with more qu
 
 [source,javascript]
 ----
-include::src/components/Topbar.vue[lines=7]
+include::{sourcedir}/src/components/Topbar.vue[lines=7]
 ----
 
 [source,javascript]
 ----
-include::src/components/Topbar.vue[lines=21]
+include::{sourcedir}/src/components/Topbar.vue[lines=21]
 ----
 
 [source,javascript]
 ----
-include::src/components/Topbar.vue[lines=36..48]
+include::{sourcedir}/src/components/Topbar.vue[lines=36..48]
 ----
 
 
