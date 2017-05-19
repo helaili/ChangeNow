@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChangeNow Documentation</title>
-    <meta name="description" content="An application using cool concepts such as Documentation-As-Code (Asciidoctor), Feature Toggle (Flipper), Live experiments (Scientist) and MySQL Schema migration (gh-ost)">
+    <meta name="description" content="An application using cool concepts such as Documentation-As-Code (Asciidoctor),">
     <meta name="author" content="Your name goes here">
     <meta name="copyright" content="Maybe consider a Creative Commons license">
     <link rel="stylesheet" href="css/foundation.css">
@@ -85,17 +85,29 @@
 <h3 id="flipper">Flipper</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> index.adoc - include::src/components/Topbar.vue[lines=<span class="integer">7</span>]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">    &lt;el-menu-item index=<span class="string"><span class="delimiter">&quot;</span><span class="content">processingCenter</span><span class="delimiter">&quot;</span></span> v-<span class="keyword">if</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">isProcessingCenterEnabled</span><span class="delimiter">&quot;</span></span>&gt;Processing Center&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">el-menu-item&gt;</span></span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> index.adoc - include::src/components/Topbar.vue[lines=<span class="integer">21</span>]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">        isProcessingCenterEnabled: <span class="predefined-constant">false</span>,</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">Unresolved directive <span class="keyword">in</span> index.adoc - include::src/components/Topbar.vue[lines=<span class="integer">36</span>.<span class="float">.48</span>]</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">      <span class="function">isFeatureEnabled</span>: <span class="keyword">function</span> (feature, actor, flag) {
+        <span class="local-variable">this</span>.<span class="predefined">$http</span>.post(<span class="string"><span class="delimiter">'</span><span class="content">/flipper/enabled</span><span class="delimiter">'</span></span>, {
+          <span class="key">actor</span>: actor,
+          <span class="key">feature</span>: feature
+        }).then((res) =&gt; {
+          console.log(res.data)
+          <span class="keyword">var</span> jsonRes = res.data
+          <span class="local-variable">this</span>[flag] = jsonRes.enabled
+        }, (error) =&gt; {
+          console.log(error)
+        })
+      }
+    },</code></pre>
 </div>
 </div>
 </div>
