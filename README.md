@@ -2,6 +2,8 @@
 
 > A project where changes can be pushed now!
 
+See [doc](https://helaili.github.io/ChangeNow/)
+
 ## Build Setup
 
 ``` bash
