@@ -85,29 +85,30 @@
 <h3 id="flipper">Flipper</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">    &lt;el-menu-item index=<span class="string"><span class="delimiter">&quot;</span><span class="content">processingCenter</span><span class="delimiter">&quot;</span></span> v-<span class="keyword">if</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">isProcessingCenterEnabled</span><span class="delimiter">&quot;</span></span>&gt;Processing Center&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">el-menu-item&gt;</span></span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">&lt;el-menu-item index=<span class="string"><span class="delimiter">&quot;</span><span class="content">processingCenter</span><span class="delimiter">&quot;</span></span> v-<span class="keyword">if</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">isProcessingCenterEnabled</span><span class="delimiter">&quot;</span></span>&gt;Processing Center&lt;<span class="regexp"><span class="delimiter">/</span><span class="content">el-menu-item&gt;</span></span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">        isProcessingCenterEnabled: <span class="predefined-constant">false</span>,</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript">isProcessingCenterEnabled: <span class="predefined-constant">false</span>,</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Checkout how couple tags in [the source code](<a href="https://github.com/helaili/ChangeNow/blob/master/src/components/Topbar.vue#L35" class="bare">https://github.com/helaili/ChangeNow/blob/master/src/components/Topbar.vue#L35</a>) can help generating the documentation below.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">      <span class="function">isFeatureEnabled</span>: <span class="keyword">function</span> (feature, actor, flag) {
-        <span class="local-variable">this</span>.<span class="predefined">$http</span>.post(<span class="string"><span class="delimiter">'</span><span class="content">/flipper/enabled</span><span class="delimiter">'</span></span>, {
-          <span class="key">actor</span>: actor,
-          <span class="key">feature</span>: feature
-        }).then((res) =&gt; {
-          console.log(res.data)
-          <span class="keyword">var</span> jsonRes = res.data
-          <span class="local-variable">this</span>[flag] = jsonRes.enabled
-        }, (error) =&gt; {
-          console.log(error)
-        })
-      } <span class="comment">// end::isFeatureEnabled[]</span>
-    },</code></pre>
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="function">isFeatureEnabled</span>: <span class="keyword">function</span> (feature, actor, flag) {
+  <span class="local-variable">this</span>.<span class="predefined">$http</span>.post(<span class="string"><span class="delimiter">'</span><span class="content">/flipper/enabled</span><span class="delimiter">'</span></span>, {
+    <span class="key">actor</span>: actor,
+    <span class="key">feature</span>: feature
+  }).then((res) =&gt; {
+    console.log(res.data)
+    <span class="keyword">var</span> jsonRes = res.data
+    <span class="local-variable">this</span>[flag] = jsonRes.enabled
+  }, (error) =&gt; {
+    console.log(error)
+  })</code></pre>
 </div>
 </div>
 </div>
