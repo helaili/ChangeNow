@@ -31,7 +31,7 @@ include::{sourcedir}/src/components/Topbar.vue[lines=7]
 include::{sourcedir}/src/components/Topbar.vue[lines=21]
 ----
 
-Checkout how couple tags in [the source code](https://github.com/helaili/ChangeNow/blob/master/src/components/Topbar.vue#L35) can help generating the documentation below. 
+Checkout how couple tags in link:https://github.com/helaili/ChangeNow/blob/master/src/components/Topbar.vue#L35[the source code] can help generating the documentation below. 
 
 [source,javascript,indent=0]
 ----
