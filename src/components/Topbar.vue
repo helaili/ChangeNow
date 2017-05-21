@@ -32,7 +32,7 @@
         } else if (keyPath[0] === 'userList') {
           this.$router.push({name: 'UsersView'})
         }
-      },
+      }, // tag::isFeatureEnabled[]
       isFeatureEnabled: function (feature, actor, flag) {
         this.$http.post('/flipper/enabled', {
           actor: actor,
@@ -44,7 +44,7 @@
         }, (error) => {
           console.log(error)
         })
-      }
+      } // end::isFeatureEnabled[]
     },
     computed: {
 
