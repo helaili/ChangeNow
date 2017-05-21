@@ -21,19 +21,21 @@ Trying to stay away from the dreaded `hello-world` which leaves you with more qu
 
 === Flipper
 
-[source,javascript]
+[source,javascript,indent=0]
 ----
 include::{sourcedir}/src/components/Topbar.vue[lines=7]
 ----
 
-[source,javascript]
+[source,javascript,indent=0]
 ----
 include::{sourcedir}/src/components/Topbar.vue[lines=21]
 ----
 
-[source,javascript]
+Checkout how couple tags in [the source code](https://github.com/helaili/ChangeNow/blob/master/src/components/Topbar.vue#L35) can help generating the documentation below. 
+
+[source,javascript,indent=0]
 ----
-include::{sourcedir}/src/components/Topbar.vue[lines=36..48]
+include::{sourcedir}/src/components/Topbar.vue[tags=isFeatureEnabled]
 ----
 
 
